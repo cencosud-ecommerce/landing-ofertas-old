@@ -1,0 +1,85 @@
+font-source(data)
+	font-family data
+	src url('../fonts/'+data+'.woff2') format('woff2'),
+		url('../fonts/'+data+'.woff') format('woff')
+	font-weight normal
+	font-style normal
+	
+font-sourceOld(data)
+	font-family data
+	src url('../fonts/'+data+'.eot')
+	src url('../fonts/'+data+'.eot?#iefix') format('embedded-opentype'), url('../fonts/'+data+'.woff') format('woff'), url('../fonts/'+data+'.ttf') format('truetype'), url('../fonts/'+data+'.svg') format('svg')
+	font-weight normal
+	
+col-width(data)
+	width (data*(100/12))+'%'
+
+clearfix()
+	&:before
+	&:after
+		visibility hidden
+		display block
+		font-size 0
+		content " "
+		height 0
+	&:after
+		clear both
+
+transition(parameters)
+	-webkit-transition parameters
+	-moz-transition parameters
+	-ms-transition parameters
+	-o-transition parameters
+	transition parameters
+	
+transition2(state=all, number=.3, property=ease, complement='')
+	-webkit-transition state + ' ' +number+'s ' + property +' '+ complement
+	-moz-transition state + ' ' +number+'s ' + property +' '+ complement
+	-ms-transition state + ' ' +number+'s ' + property +' '+ complement
+	-o-transition state + ' ' +number+'s ' + property +' '+ complement
+	transition state + ' ' +number+'s ' + property +' '+ complement
+
+core-options(prop,args)
+	-webkit-{prop} args
+	-moz-{prop} args
+	{prop} args
+
+degraded(color1,color2)
+	background color1
+	background -moz-linear-gradient(top, color1 0%, color2 100%)
+	background -webkit-gradient(linear, left top, left bottom, color-stop(), col-stop(0%, color1), color-stop(100%, color2))
+	background -webkit-linear-gradient(top, color1 0%, color2 100%)
+	background -o-linear-gradient(top, color1 0%, color2 100%)
+	background -ms-linear-gradient(top, color1 0%, color2 100%)
+	background linear-gradient(to bottom, color1 0%, color2 100%)
+
+animate(animate, parameters)
+	animation animate parameters
+	-webkit-animation animate parameters
+	-moz-animation animate parameters
+	-o-animation animate parameters
+	-ms-animation animate parameters
+	
+transform(transform_arguments)
+	-webkit-transform transform_arguments
+	-moz-transform transform_arguments
+	-ms-transform transform_arguments
+	-o-transform transform_arguments	
+	transform transform_arguments
+	
+cross-properties(properties, arguments)
+	-webkit-{properties} arguments
+	-moz-{properties} arguments
+	-ms-{properties} arguments
+	-o-{properties} arguments
+	{properties} arguments
+
+// calc(prop, val)
+// 	calc-vendors = webkit moz
+	
+// 	if current-property
+// 		val = unquote(val)
+// 	add-property
+// 	{prop} "-webkit-calc("+val+")"
+// 	{prop} "-moz-calc("+val+")"
+// 	{prop} "calc("+val+")"

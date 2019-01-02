@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+<head>
+	<vtex:template id="metas" />
+	<link rel="stylesheet" href="/arquivos/slick-theme.css"/>
+    <link rel="stylesheet" href="/arquivos/slick.css"/>
+	<link rel="stylesheet" href="https://jumbocolombia.vteximg.com.br/arquivos/jumbo-font.css"/>
+	<link rel="stylesheet" type="text/css" href="/arquivos/fonts-ofd.css"/>
+	<link rel="stylesheet" type="text/css" href="/arquivos/main-ofd-v2.css"/>
+</head>
+
+<body class="department">
+	<!-- Overlays -->
+<vtex:template id="overlay-delivery-window" />
+<vtex:template id="overlay-store-selector" />
+<vtex:template id="overlay-product-quickview" />
+<vtex:template id="overlay-added-to-cart" />
+<vtex:template id="overlay-add-shop-list" />
+<vtex:template id="overlay-added-to-lists" />
+<vtex:template id="overlay-store" />
+
+
+
+
+<!-- /Overlays -->
+
+<div id="highlight-background"></div>
+
+<!-- Preload Screen -->
+<vtex:template id="preload-screen" />
+<!-- Preload Screen -->
+
+	<!-- Header -->
+	<vtex:template id="header" />
+	<!-- /Header -->
+
+	<!-- Navigation -->
+	<vtex:template id="navigation" />
+	<!-- /Navigation -->
+
+	<div class="wrapper department-wrapper product-list-wrapper clear-fix">
+		<div class="setBody">
+			<section class="offers">
+				<div class="container">
+					<div class="nav-offers">
+						<ul class="filter-categories">
+							<li><a><div class="logo-event"></div></a></li>
+							<li><a class="filter-cat view-all"  data-filter=".item-offer">Todas las ofertas</a></li>
+							<li><a class="filter-cat" data-filter=".televisores-y-sonido"><div class="jico jico-tv-sound"></div>Televisores y Sonido</a></li>
+							<li><a class="filter-cat" data-filter=".tablets-y-celulares"><div class="jico jico-phone-tablet"></div>Tablets y Celulares</a></li>
+							<li><a class="filter-cat" data-filter=".tecnologia-y-videojuegos"><div class="jico jico-technology"></div>Tecnología y Videojuegos</a></li>
+							<li><a class="filter-cat" data-filter=".electrodomesticos"><div class="jico jico-electro"></div>Electrodomésticos</a></li>
+							<li><a class="filter-cat" data-filter=".muebles-y-colchones"><div class="jico jico-bed"></div>Muebles y Colchones</a></li>
+							<li><a class="filter-cat" data-filter=".hogar-y-decoracion"><div class="jico jico-cuadro"></div>Hogar y Decoración</a></li>
+							<li><a class="filter-cat" data-filter=".deportes"><div class="jico jico-spinning"></div>Deportes</a></li>
+							<li><a class="filter-cat" data-filter=".tiempo-libre"><div class="jico jico-camping"></div>Tiempo Libre</a></li>
+							<li><a class="filter-cat" data-filter=".escolar"><div class="jico jico-agenda"></div>Escolar</a></li>
+							<!--<li><a href="#vinos-y-licores"><div class="jico jico-drink"></div>Vinos y Licores</a></li>-->
+							<li><a class="filter-cat" data-filter=".bebes-y-niños"><div class="jico jico-horse"></div>Bebés y Niños</a></li>
+							<li><a class="filter-cat" data-filter=".automovil"><div class="jico jico-car"></div>Automóvil</a></li>
+						</ul>
+					</div>
+					<ul class="content-offers">
+						<div class="featured-products">
+							<vtex:contentPlaceHolder id="featured" />
+						</div>
+						<div class="items-offers">
+							<vtex:contentPlaceHolder id="Ofertas" />
+						</div>
+					</ul>
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- Footer -->
+	<vtex:template id="footer" />
+	<script src="/arquivos/slick.min.js"></script>
+	<script src="/arquivos/isotope-docs.min.js"></script>
+	<script src="/arquivos/masonry-docs.min.js"></script>
+	<script src="/arquivos/main-ofd.js"></script>
+	<!-- /Footer -->	
+</body>
+</html>
