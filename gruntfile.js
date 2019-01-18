@@ -13,8 +13,8 @@ module.exports = function (grunt) {
 					}
 				},
 				files: {
-					'css/main.css' : 'stylus/core/main.styl',
-					'css/other-styles.css' : 'stylus/other-styles.styl',
+					'dist/main.css' : 'src/stylus/core/main.styl',
+					'dist/other-styles.css' : 'src/stylus/other-styles.styl',
 				}
 			}
 		},
@@ -25,27 +25,27 @@ module.exports = function (grunt) {
 			my_target: {
 				options: {
 					sourceMap: true,
-					sourceMapName : 'js/app.map',
+					sourceMapName : 'dist/main-ofd.map',
 					beautify: false
 				},
 				files: [{
-					'js/app.min.js': [
-						'js/main.js'
+					'dist/main-ofd.js': [
+						'src/js/main.js'
 					]
 				}]
 			}
 		},
 		watch: {
 			css: {
-				files: ['stylus/**/*.styl',
-						'stylus/*.styl'],
+				files: ['src/stylus/**/*.styl',
+						'src/stylus/*.styl'],
 				tasks: ['stylus'],
 				options: {
 					livereload: true
 				}
 			},
 			js : {
-				files: ['js/main.js'],
+				files: ['src/js/main.js'],
 				tasks: ['uglify']
 			}
 		}

@@ -9,6 +9,7 @@
 		  columnWidth: 248
 		});
 
+
 		$('.content-offers .items-offers .item-offer').each(function(index, el) {
 			var cat = $(el).attr('data-category');
 			$(el).addClass(cat);
@@ -47,6 +48,7 @@
 			filterValue = filterFns[ filterValue ] || filterValue;
 			$grid.isotope({ filter: filterValue });
 		});
+
 
 		var urlHash = window.location.href;
 
