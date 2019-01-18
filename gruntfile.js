@@ -13,7 +13,7 @@ module.exports = function (grunt) {
 					}
 				},
 				files: {
-					'dist/main.css' : 'src/stylus/core/main.styl',
+					'dist/main-ofd.css' : 'src/stylus/core/main.styl',
 					'dist/other-styles.css' : 'src/stylus/other-styles.styl',
 				}
 			}

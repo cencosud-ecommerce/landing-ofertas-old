@@ -1,120 +1,128 @@
 (function($) {
 
-	jQuery(document).ready(function($) {
+	var self;
 
-		$('body').attr('class', 'landing-ofertas is-food-site bogota sc-1');
+	var OffersLanding = {
 
-		$('.content-offers .items-offers').masonry({
-		  itemSelector: '.item-offer',
-		  columnWidth: 248
-		});
+		// Avoid initialize variables in null type
+		msnry: {},
+		iso: {},
+		category: "",
+		urlHash: "",
+		filterFns: {},
 
+		init: function(){
+			self = this;
+			$(document).ready(self.documentReady);
+		},
+		documentReady: function(){
+			console.log("☺");
 
-		$('.content-offers .items-offers .item-offer').each(function(index, el) {
-			var cat = $(el).attr('data-category');
-			$(el).addClass(cat);
-		});
+			// Why ?
+			$('.content-offers .items-offers .item-offer').each(function (index, elem) {
+				self.category = $(elem).attr('data-category');
+				$(elem).addClass(self.category);
+		   });
 
-		var $grid = $('.content-offers .items-offers').isotope({
-		  itemSelector: '.item-offer',
-		  layoutMode: 'fitRows',
-		  getSortData: {
-		    category: '[data-category]'
-		  }
-		});
-     
+			self.addClassToBody();
+			self.initMansory();
+			self.initIsotope();
 
-		// filter functions
-		var filterFns = {
-		  
-		};
-
-		// console.log(document.location + );
-
-		// bind filter button click
-		$('.filter-categories li').on( 'click', '.filter-cat', function() {
-			var pathFilter = $(this).attr('data-filter');
-			pathFilter = pathFilter.replace('.', '');
-			// window.location.hash = pathFilter;
-			var urlFilter = window.location.href;
-			var NewUrl = urlFilter.split("?filter=")[0];
-			// urlFilter = window.location.split("?")[0];
-			var NewUrl2 = NewUrl + "?filter=" + pathFilter;
-			window.history.replaceState({}, document.title, NewUrl2);
-			$(this).addClass('active');
-			$(this).parents('li').siblings().find('.filter-cat').removeClass('active');
-			var filterValue = $( this ).attr('data-filter');
-			// use filterFn if matches value
-			filterValue = filterFns[ filterValue ] || filterValue;
-			$grid.isotope({ filter: filterValue });
-		});
-
-
-		var urlHash = window.location.href;
-
-		if (urlHash.indexOf('?filter=') >= 0) {
+			$(document).on('click','.filter-cat', function (e) { self.filterByCategory(e) } )
 			
-			var filterhash = urlHash.split('?filter=')[1];
-			// console.log('sin quitar hash ' + filterhash);
-			if (filterhash.indexOf('&')) {
-				filterhash = filterhash.split('&')[0];
-				// console.log('este tiene hashhh ' +  filterhash);
-			} else {
-				// console.log('no tiene hash');
-			}
-			// var filterhash = urlHash.substring(
-			//     urlHash.lastIndexOf("?filter=") + 1, 
-			//     urlHash.lastIndexOf("&")
-			// );
-			console.log(filterhash);
-			var filterValue = '.' + filterhash;
-			$('.filter-categories li .filter-cat[data-filter="'+filterValue+'"]').addClass('active');
-			// use filterFn if matches value
-			filterValue = filterFns[ filterValue ] || filterValue;
-			$grid.isotope({ filter: filterValue });
-
-		} else {
-			
-		}		
-
-		if( $(window).width() <= 1024 ) {
-			// console.log('resize!!')
-			$('.filter-categories').slick({
-			  infinite: true,
-			  slidesToShow: 7,
-			  arrow: true,
-			  dots: false,
-			  slidesToScroll: 1,
-			  responsive: [
-				{
-				  breakpoint: 769,
-				  settings: {
-					slidesToShow: 4,
-					slidesToScroll: 2,
-					infinite: true,
-					dots: false
-				  }
-				},
-				{
-				  breakpoint: 500,
-				  settings: {
-					slidesToShow: 3,
-					slidesToScroll: 2
-				  }
-				}
-			  ]
-			});
-			
-			$('.content-offers .items-offers').masonry({
-			  itemSelector: '.item-offer',
-			  columnWidth: 300
-			});
+			//self.hashFunct();
+			self.isMobile();
 
 			$('.nav-offers .filter-categories li .logo-event').addClass('mobile');
+		},
+		filterByCategory: function(event){
+			console.log("filter")
+			var pathFilter = $(event.target).closest('a').attr('data-filter');
+			pathFilter = pathFilter.replace('.', '');
+
+			var urlFilter = window.location.href;
+			var NewUrl = urlFilter.split("?filter=")[0];
+			var NewUrl2 = NewUrl + "?filter=" + pathFilter;
+
+			window.history.replaceState({}, document.title, NewUrl2);
+			$(event.target).addClass('active');
+			$(event.target).parents('li').siblings().find('.filter-cat').removeClass('active');
+
+			var filterValue = $( event.target ).closest('a').attr('data-filter');
+			// use filterFn if matches value
+			filterValue = self.filterFns[ filterValue ] || filterValue;
+			self.iso.arrange({filter: filterValue})
+		},
+		addClassToBody: function(){
+			$('body').addClass('landing-ofertas is-food-site bogota sc-1')
+		},
+		initMansory: function(){
+			self.msnry = new Masonry('.content-offers .items-offers',{
+				itemSelector: '.item-offer',
+				columnWidth: 248
+			});
+		},
+		initIsotope: function(){
+			var elem = document.querySelector('.content-offers .items-offers')
+			self.iso = new Isotope( elem , {
+				itemSelector: '.item-offer',
+				layout: 'fitRows',
+				getSortData: {
+					category: '[data-category]'
+				}
+			})
+
+		},
+		hashFunct: function (){ 
+			self.urlHash = window.location.href;
+
+			if (self.urlHash.indexOf('?filter=') >= 0) {
 			
-		}		
+				var filterhash = self.urlHash.split('?filter=')[1];
+				if (filterhash.indexOf('&')) {
+					filterhash = filterhash.split('&')[0];
+				} 
 
-	});
+				var filterValue = '.' + filterhash;
+				$('.filter-categories li .filter-cat[data-filter="'+filterValue+'"]').addClass('active');
+				// use filterFn if matches value
+				filterValue = self.filterFns[ filterValue ] || filterValue;
+				self.iso.arrange({filter: filterValue})
+			}
+		},
+		isMobile: function(){
+			if(Aurora.isMobile()){
+				$('.filter-categories').slick({
+					infinite: true,
+					slidesToShow: 7,
+					arrow: true,
+					dots: false,
+					slidesToScroll: 1,
+					responsive: [
+					  {
+						breakpoint: 769,
+						settings: {
+						  slidesToShow: 4,
+						  slidesToScroll: 2,
+						  infinite: true,
+						  dots: false
+						}
+					  },
+					  {
+						breakpoint: 500,
+						settings: {
+						  slidesToShow: 3,
+						  slidesToScroll: 2
+						}
+					  }
+					]
+				  });
+		  
+				  $('.filter-categories').css('opacity','1');
+			}
+		}
+	};
 
+	return OffersLanding.init();
 
 })(jQuery);
