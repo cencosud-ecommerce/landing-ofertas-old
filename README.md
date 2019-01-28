@@ -9,7 +9,7 @@ Repositorio del desarrollo en los landings de ofertas en /ofertas.
 | `grunt uglify` | Ejecuta una version optimizada de .js     |
 | `grunt watch`  | Ejecuta .js y .css y mantiene escuchando cambios   |
 
-## Tecnoologías usadas
+## Tecnologías usadas
 
 - jQuery
 - Mansory.js
