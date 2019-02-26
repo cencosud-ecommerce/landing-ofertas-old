@@ -4,6 +4,10 @@ body
 	font-weight normal
 	overflow-x hidden
 	transition(all .5s ease)
+
+.cont-extra-promo
+	display none !important
+
 .container
 	padding 0 
 	display block
@@ -96,6 +100,46 @@ body
 		clearfix()
 	&.cyber
 		background c_cyber
+
+body
+	&.extra-promo
+		.offers
+			background-image: linear-gradient(to bottom, #3b8c9c, #4bb2c5, #4bb2c5, #4bb2c5, #4bb2c5, #50bfd3)
+			.top-title-cyber
+				color  #fff
+			.nav-offers
+				.filter-categories
+					li
+						.filter-cat
+							color c_white
+    						border-color c_white
+							.font-icn-cat
+								color c_white
+			.cont-extra-promo
+				font-size:  25px
+				color: #fff
+				text-transform:  uppercase
+				padding:  35px 0
+				background:  #3da2b4
+				width: 100%
+				border-bottom: solid 1.5px
+				display:  block
+				h1
+					width: 40%
+					margin:  0 auto
+					position: relative
+					font-size:  25px
+					&:before
+						content:  ''
+						width: 200px
+						height: 170px
+						display:  block
+						position:  absolute
+						background-image: url('/arquivos/extra-promo-logo.png')
+						background-size: cover
+						top: calc(50% - 90px)
+						left: -140px
+
 
 body
 	&.finde
