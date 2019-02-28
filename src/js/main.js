@@ -2,7 +2,7 @@
 
 	jQuery(document).ready(function($) {
 
-		$('body').attr('class', 'landing-ofertas is-food-site bogota sc-1');
+		$('body').addClass('landing-ofertas is-food-site bogota sc-1');
 
 		$('.content-offers .items-offers').masonry({
 		  itemSelector: '.item-offer',
@@ -111,16 +111,18 @@
 			$('.nav-offers .filter-categories li .logo-event').addClass('mobile');
 			
 		}
-		
-		$(window).on("scroll", function(e) {
-		  if ($(window).scrollTop() > 250) {
-			$(".nav-offers").addClass("fixed-extra");
-		  } else {
-			$(".nav-offers").removeClass("fixed-extra");
-		  }
-		  
-		});
 
+		if( $(window).width() <= 760 ) {
+			$(window).on("scroll", function(e) {
+					if ($(window).scrollTop() > 250) {
+						$(".nav-offers").addClass("fixed-extra"); 
+					} else {
+						$(".nav-offers").removeClass("fixed-extra"); 
+				}
+			}); 
+		}
+
+		
 	});
 
 
