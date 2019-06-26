@@ -103,7 +103,7 @@ body
 
 body.extra-promo
 	.offers
-		background-image: linear-gradient(to bottom, #3b8c9c, #4bb2c5, #4bb2c5, #4bb2c5, #4bb2c5, #50bfd3)
+		background-image: linear-gradient(to bottom, #518aa7, #61b3d8)
 		transition: all 1s
 		.top-title-cyber
 			color  #fff
@@ -142,7 +142,17 @@ body.extra-promo
 					background-size: cover
 					top: calc(50% - 90px)
 					left: calc(0% - 200px)
-					
+	&.gana-prima
+	.offers
+		.cont-extra-promo
+				background: #5fa3ce
+				h1
+					&:before
+						background-image: url(https://jumbocolombiafood.vteximg.com.br/arquivos/logo-gana-prima.png)
+						width: 90px
+						height: 90px
+						top: calc(50% - 45px)
+						left: calc(0% - 80px)
 
 body
 	&.finde
@@ -1126,6 +1136,18 @@ body
 			.nav-offers
 				position inherit
 				background transparent
+		
+		&.gana-prima
+		.offers
+			.cont-extra-promo
+				h1
+					padding-left: 80px
+					&:before
+						background-image: url(https://jumbocolombiafood.vteximg.com.br/arquivos/logo-gana-prima.png)
+						width: 75px
+						height: 75px
+						top: calc(50% - 35px);
+						left: calc(0% - -20px);
 						
 					
 @media all and (max-width 500px)

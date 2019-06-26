@@ -9,11 +9,13 @@
   "author": "cristianc",
   "license": "ISC",
   "dependencies": {
-    "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-stylus": "^1.2.0",
     "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "jquery": "^3.2.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.4"
   }
 }
