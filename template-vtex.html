@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="es-CO">
 <head>
-	<vtex:template id="metas" />
+	<vtex:contentPlaceHolder id="metatags" />
+    <vtex:template id="metas-landings" />
 	<link rel="stylesheet" href="/arquivos/slick-theme.css"/>
     <link rel="stylesheet" href="/arquivos/slick.css"/>
 	<link rel="stylesheet" href="https://jumbocolombia.vteximg.com.br/arquivos/jumbo-font.css"/>
 	<link rel="stylesheet" type="text/css" href="/arquivos/fonts-ofd.css"/>
-	<link rel="stylesheet" type="text/css" href="/arquivos/main-ofd-v2.css"/>
+	<link rel="stylesheet" type="text/css" href="/files/main-ofd-new.css"/>
+	 
 </head>
 
 <body class="department">
@@ -19,6 +21,84 @@
 <vtex:template id="overlay-added-to-lists" />
 <vtex:template id="overlay-store" />
 
+<style>
+	/*
+	@media all and (max-width: 768px){
+		.nav-offers .filter-categories li .filter-cat .icon-precios-especiales {
+			display: block;
+			width: 80px;
+			height: 44px;
+			margin: 0 auto;
+			background: url(/arquivos/icono-precios-especiales.png) no-repeat;
+			background-size: auto 100%;
+			background-position: 50%;
+		}
+	}
+	*/
+	
+	/*.nav-offers .filter-categories li .logo-event {
+		display: none;
+		background-image: url(/arquivos/ficha-cyber-desk.jpg) !important;
+	}
+	.nav-offers .filter-categories li .logo-event.mobile {
+		display: block;
+		background-image: url(/arquivos/ficha-cyber-mobile.png) !important;
+	}
+
+	@media all and (max-width: 760px) {
+		.top-title-cyber {
+			display: none !important;
+		}
+	}
+
+	.top-title-cyber {
+	    display:  block;
+	    width:  100%;
+	    height:  90px;
+	    background: #082828;
+	    color: #fff;
+	    text-align:  center;
+	    padding: 17px 0;
+	    margin-top: -44px;
+	}
+
+	.top-title-cyber h1 {
+	    font-size: 40px;
+	    line-height: 1em;
+	    display:  inline-block;
+	    display:  flex;
+	    justify-content:  center;
+	    align-items:  center;
+	    margin: 0;
+	}
+
+	.top-title-cyber h1 span {
+	    color: #00b7c1;
+	    font-weight: 600;
+	    display:  inline-block;
+	}
+
+	.top-title-cyber h1 i {
+	    display:  inline-block;
+	}
+
+	.top-title-cyber h1 i img {
+	    height: 60px;
+	    margin: 0 10px;
+	}*/
+	
+	.h1-seo{
+        font-size: 20px;
+        padding: 20px 0 0;
+        margin: 0;
+        font-weight: bold;
+	}
+	
+	.top-title-cyber {
+        padding-top:  20px;
+    }
+	
+</style>
 
 
 
@@ -41,31 +121,50 @@
 	<div class="wrapper department-wrapper product-list-wrapper clear-fix">
 		<div class="setBody">
 			<section class="offers">
+			    <div class="cont-extra-promo"><h1>Estas son nuestras <b>ofertas</b> de temporada <b>extra promo</b></h1></div>
 				<div class="container">
+				    <!-- Descomentar en FXL -->
+				    <!--<h1 class="h1-seo">Ofertas JUMBO del FindeXL</h1>-->
+				    <!-- End Descomentar en FXL -->
+				    <div class="top-title-cyber">
+						<p>Selecciona la categoría que estás buscando</p>
+					</div>
 					<div class="nav-offers">
 						<ul class="filter-categories">
-							<li><a><div class="logo-event"></div></a></li>
-							<li><a class="filter-cat view-all"  data-filter=".item-offer">Todas las ofertas</a></li>
-							<li><a class="filter-cat" data-filter=".televisores-y-sonido"><div class="jico jico-tv-sound"></div>Televisores y Sonido</a></li>
-							<li><a class="filter-cat" data-filter=".tablets-y-celulares"><div class="jico jico-phone-tablet"></div>Tablets y Celulares</a></li>
-							<li><a class="filter-cat" data-filter=".tecnologia-y-videojuegos"><div class="jico jico-technology"></div>Tecnología y Videojuegos</a></li>
-							<li><a class="filter-cat" data-filter=".electrodomesticos"><div class="jico jico-electro"></div>Electrodomésticos</a></li>
-							<li><a class="filter-cat" data-filter=".muebles-y-colchones"><div class="jico jico-bed"></div>Muebles y Colchones</a></li>
-							<li><a class="filter-cat" data-filter=".hogar-y-decoracion"><div class="jico jico-cuadro"></div>Hogar y Decoración</a></li>
-							<li><a class="filter-cat" data-filter=".deportes"><div class="jico jico-spinning"></div>Deportes</a></li>
-							<li><a class="filter-cat" data-filter=".tiempo-libre"><div class="jico jico-camping"></div>Tiempo Libre</a></li>
-							<li><a class="filter-cat" data-filter=".escolar"><div class="jico jico-agenda"></div>Escolar</a></li>
+						
+						    <!-- li debe tener data-index de atributo -->
+						    
+							<!-- <li><a href=""><div class="logo-event"></div></a></li> -->
+							<li data-index="0"><a class="filter-cat active view-all" data-filter=".item-offer"><div class="table"><div class="table-cell"><div class="icon-home icon-home-ofertas" style="font-size: 45px;"></div>Todas las ofertas</div></div></a></li>
+							<!--<li><a class="filter-cat" data-filter=".aniversario" style="padding:10px 0;"><div class="font-icn-cat"><img src="/arquivos/SELLO_aniversario.png"/></div></a></li>-->
+							<!--<li><a class="filter-cat" data-filter=".jumboMobile"><div class="icon-jboMobile"></div>Jumbo Mobile</a></li>-->
+							<!--<li><a class="filter-cat" data-filter=".televisores"><div class="font-icn-cat cat-televisores"></div>Tv y Video</a></li>-->
+							<!-- <li><a class="filter-cat" data-filter=".padres"><div class="icon-padres"></div>Padres</a></li> -->
+							<!--<li><a class="filter-cat" data-filter=".televisor"><div class="table"><div class="table-cell"><div class="icn-cat-img cat-televisores"></div>Televisores</div></div></a></li>-->
+							<!--<li><a class="filter-cat" data-filter=".celulares"><div class="table"><div class="table-cell"><div class="font-icn-cat cat-tecnologia"></div>Celulares</div></div></a></li>-->
+							<li data-index="1"><a class="filter-cat" data-filter=".tecnologia"><div class="table"><div class="table-cell"><div class="font-icn-cat cat-tecnologia"></div>Tecnología</div></div></a></li>
+							<li data-index="2"><a class="filter-cat" data-filter=".electrodomesticos"><div class="table"><div class="table-cell"><div class="font-icn-cat cat-lavadoras"></div>Electro y Cocina</div></div></a></li>
+							<li data-index="3"><a class="filter-cat" data-filter=".muebles-y-colchones"><div class="table"><div class="table-cell"><div class="font-icn-cat cat-muebles-y-colchones"></div>Muebles y Colchones</div></div></a></li>
+							<li data-index="4"><a class="filter-cat" data-filter=".deportes-y-tiempo-libre"><div class="table"><div class="table-cell"><div class="font-icn-cat cat-tiempo-libre"></div>Deportes y Tiempo libre</div></div></a></li>
+							<!-- <li><a class="filter-cat" data-filter=".escolar"><div class="jico jico-agenda"></div>Escolar</a></li> -->
 							<!--<li><a href="#vinos-y-licores"><div class="jico jico-drink"></div>Vinos y Licores</a></li>-->
-							<li><a class="filter-cat" data-filter=".bebes-y-niños"><div class="jico jico-horse"></div>Bebés y Niños</a></li>
-							<li><a class="filter-cat" data-filter=".automovil"><div class="jico jico-car"></div>Automóvil</a></li>
+							<li data-index="5"><a class="filter-cat" data-filter=".bebes-y-ninos"><div class="table"><div class="table-cell"><div class="font-icn-cat cat-bebes-y-ninos"></div>Bebés y Niños</div></div></a></li>
+							<li data-index="6"><a class="filter-cat" data-filter=".automovil-y-ferreteria"><div class="table"><div class="table-cell"><div class="font-icn-cat cat-automovil"></div>Automóvil y Ferretería</div></div></a></li>
+							<li data-index="7"><a class="filter-cat" data-filter=".mercado"><div class="table"><div class="table-cell"><div class="font-icn-cat cat-anchetas"></div>Mercado</div></div></a></li>
+							<!-- <li><a class="filter-cat" data-filter=".precios-especiales"><div class="icon-precios-especiales"></div>Precios Especiales</a></li>-->
+							
 						</ul>
 					</div>
 					<ul class="content-offers">
 						<div class="featured-products">
+							<!-- <div class="top-title-cyber">
+								<h1><i><img src="/arquivos/logo-cyber-title-landing.png" alt="Cyberlunes" /></i>Estamos en <span> CyberLunes</span></h1>
+							</div> -->
 							<vtex:contentPlaceHolder id="featured" />
 						</div>
 						<div class="items-offers">
 							<vtex:contentPlaceHolder id="Ofertas" />
+							<vtex:contentPlaceHolder id="Ofertas-tienda" />
 						</div>
 					</ul>
 				</div>
@@ -77,7 +176,15 @@
 	<script src="/arquivos/slick.min.js"></script>
 	<script src="/arquivos/isotope-docs.min.js"></script>
 	<script src="/arquivos/masonry-docs.min.js"></script>
-	<script src="/arquivos/main-ofd.js"></script>
-	<!-- /Footer -->	
+	<script src="/files/main-ofd.js"></script>
+	<!--<script>
+	    setTimeout(function(){
+            $('body').addClass('finde');
+        }, 500);
+    </script>-->
+    <script>
+        <!--window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};-->
+        setTimeout(function(){ hj('trigger', 'landing_ofertas'); }, 3000);
+    </script>
 </body>
 </html>
