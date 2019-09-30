@@ -153,6 +153,63 @@ body.extra-promo
 						height: 90px
 						top: calc(50% - 45px)
 						left: calc(0% - 80px)
+						
+body.aniversario
+	.offers
+		/* background-image: linear-gradient(to bottom, #518aa7, #61b3d8) */
+		background: rgb(18,70,0);
+		background: linear-gradient(90deg, rgba(18,70,0,1) 0%, rgba(0,208,20,1) 51%, rgba(18,70,0,1) 100%)
+		transition: all 1s
+		.top-title-cyber
+			color  #fff
+		.nav-offers
+			.filter-categories
+				li
+					.filter-cat
+						color c_white
+						border-color c_white
+						&:hover
+							background: #fff
+							color: #00ce14 !important
+							border: 1px solid #fff
+							.font-icn-cat
+								color: #00ce14
+						.font-icn-cat
+							color: #fff
+					.active
+						background: #fff
+						border: 1px solid #fff
+						color: #00ce14
+						.font-icn-cat
+							color: #00ce14
+			&.fixed-extra
+				position fixed !important
+				background rgba(0,0,0,.6)
+		.cont-aniversario
+			font-size:  25px
+			color: #fff
+			text-transform:  uppercase
+			padding:  15px 0
+			/* background:  #3da2b4 */
+			width: 100% 
+			/* border-bottom: solid 1.5px */
+			display:  block
+			h1
+				width: 40%
+				margin:  0 auto
+				position: relative
+				font-size:  25px
+				&:before
+					content:  ''
+					margin: 0 auto
+					width: 20%
+					height: 65px
+					display:  block
+					background-image: url('https://jumbocolombiafood.vteximg.com.br/arquivos/Logo-Aniversario-LANDING.png')
+					background-size: cover
+					padding-bottom: 15px
+					/* top: calc(50% - 80px)
+					left: calc(0% - 80px) */
 
 body.findexl
 	.offers
@@ -1090,6 +1147,44 @@ body
 									height 17px
 									background url('/arquivos/tjc-tmc.png') no-repeat
 									background-size 100%
+
+@media all and (max-width 1800px)
+	body.aniversario
+		.offers
+			.cont-aniversario
+				h1
+					&::before
+						width: 20%
+						height: 48px	
+
+@media all and (max-width 1440px)
+	body.aniversario
+		.offers
+			.cont-aniversario
+				h1
+					&::before
+						width: 30%
+						height: 65px
+
+@media all and (max-width 1350px)
+	body.aniversario
+		.offers
+			.cont-aniversario
+				h1
+					&::before
+						width: 35%
+						height: 70px
+
+@media all and (max-width 1200px)
+	body.aniversario
+		.offers
+			.cont-aniversario
+				h1
+					&::before
+						width: 35%
+						height: 60px
+
+
 @media all and (max-width 1024px)
 	.nav-offers 
 		display block
@@ -1204,3 +1299,25 @@ body
 			background: #000
 	/* .content-offers
 		margin-top: 10px !important */
+	body.aniversario
+		.content-offers
+			margin-top: 10px !important
+		.offers
+			.cont-aniversario
+				margin-top: 65px
+				h1
+					width: 60%
+					font-size: 20px
+					&::before
+						width: 100%
+						height: 110px
+		.nav-offers
+			margin-top: 10px !important
+
+@media all and (max-width 400px)
+	body.aniversario
+		.offers
+			.cont-aniversario
+				h1
+					&::before
+						height: 100px
