@@ -103,8 +103,16 @@ body
 
 body.extra-promo
 	.offers
-		background-image: linear-gradient(to bottom, #518aa7, #61b3d8)
+		background: rgb(0,163,149);
+		background: linear-gradient(131deg, rgba(0,163,149,1) 0%, rgba(0,115,56,1) 100%);
 		transition: all 1s
+		.container
+			.seo-parr
+				margin: 25px 0;
+				color: white;
+				font-size: 20px;
+				strong
+					color: #ABBF16;
 		.top-title-cyber
 			color  #fff
 		.nav-offers
@@ -123,7 +131,7 @@ body.extra-promo
 			color: #fff
 			text-transform:  uppercase
 			padding:  35px 0
-			background:  #3da2b4
+			background:  #00a395
 			width: 100% 
 			border-bottom: solid 1.5px
 			display:  block
@@ -138,21 +146,21 @@ body.extra-promo
 					height: 170px
 					display:  block
 					position:  absolute
-					background-image: url('/arquivos/extra-promo-logo.png')
+					background-image: url('https://jumbocolombiafood.vteximg.com.br/arquivos/extra-promo-logo.png')
 					background-size: cover
 					top: calc(50% - 90px)
 					left: calc(0% - 200px)
-	&.gana-prima
-	.offers
-		.cont-extra-promo
-				background: #5fa3ce
-				h1
-					&:before
-						background-image: url(https://jumbocolombiafood.vteximg.com.br/arquivos/logo-gana-prima-v2.png)
-						width: 90px
-						height: 90px
-						top: calc(50% - 45px)
-						left: calc(0% - 80px)
+&.gana-prima
+.offers
+	.cont-extra-promo
+			background: #5fa3ce
+			h1
+				&:before
+					background-image: url(https://jumbocolombiafood.vteximg.com.br/arquivos/logo-gana-prima-v2.png)
+					width: 90px
+					height: 90px
+					top: calc(50% - 45px)
+					left: calc(0% - 80px)
 						
 body.aniversario
 	.offers
@@ -1291,17 +1299,17 @@ body
 				position inherit
 				background transparent
 		
-		&.gana-prima
-		.offers
-			.cont-extra-promo
-				h1
-					padding-left: 80px
-					&:before
-						background-image: url(https://jumbocolombiafood.vteximg.com.br/arquivos/logo-gana-prima-v2.png)
-						width: 75px
-						height: 75px
-						top: calc(50% - 35px);
-						left: calc(0% - -20px);
+	&.gana-prima
+	.offers
+		.cont-extra-promo
+			h1
+				padding-left: 80px
+				&:before
+					background-image: url(https://jumbocolombiafood.vteximg.com.br/arquivos/logo-gana-prima-v2.png)
+					width: 75px
+					height: 75px
+					top: calc(50% - 35px);
+					left: calc(0% - -20px);
 						
 					
 @media all and (max-width 500px)
