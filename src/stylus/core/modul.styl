@@ -248,6 +248,62 @@ body.findexl
 		color: #ffffff
 		padding: 10px 0
 
+body.bluesale
+	.offers
+		background: rgb(0,164,209);
+		background: linear-gradient(0deg, rgba(0,164,209,1) 0%, rgba(1,90,146,1) 75%);
+		transition: all 1s
+		.container
+			.seo-parr
+				margin: 25px 0;
+				color: white;
+				font-size: 20px;
+				strong
+					color: #ABBF16;
+		.top-title-cyber
+			color  #fff
+		.nav-offers
+			.filter-categories
+				li
+					.filter-cat
+						color c_white
+						border-color c_white
+						&:hover
+							background #015a92
+						.font-icn-cat
+							color c_white
+					.active
+						background #015a92
+			&.fixed-extra
+				position fixed !important
+				background rgba(0,0,0,.6)
+		.cont-blue-sale
+			font-size:  25px
+			color: #fff
+			text-transform:  uppercase
+			padding:  35px 0
+			background:  #015a92
+			width: 100% 
+			border-bottom: solid 1.5px
+			display:  block
+			h1
+				width: 40%
+				margin:  0 auto
+				position: relative
+				font-size:  25px
+				&:before
+					content:  ''
+					width: 130px
+					height: 100px
+					display:  block
+					position:  absolute
+					background-image: url('https://jumbocolombiafood.vteximg.com.br/arquivos/LogoBlueSale.png')
+					background-size: cover
+					top: calc(50% - 60px)
+					left: calc(0% - 0px)
+				strong
+					color #00a4d1
+
 body
 	&.finde
 		.nav-offers
@@ -1208,6 +1264,20 @@ body
 									height 17px
 									background url('/arquivos/tjc-tmc.png') no-repeat
 									background-size 100%
+        &.special-trade
+			.content-box
+				padding 0 !important
+				.image-product
+					max-width 100% !important
+					margin 0 !important
+					padding-bottom 0 !important
+					border-bottom 0 !important
+					img
+						max-height 100% !important
+						max-width 100% !important
+						height 100% !important
+						width 100% !important
+
 
 @media all and (max-width 1800px)
 	body.aniversario
@@ -1333,6 +1403,23 @@ body
 					height: 75px
 					top: calc(50% - 35px);
 					left: calc(0% - -20px);
+	
+	body.bluesale
+		.offers 
+			.cont-blue-sale
+				// margin-top 68px
+				h1
+					padding-left 25%
+					width 100%
+					font-size 16px
+					&:before
+						width: 100px;
+						height: 80px;
+						top: calc(50% - 45px);
+						left: 70px;
+			.nav-offers
+				position inherit
+				background transparent
 						
 					
 @media all and (max-width 500px)
@@ -1382,3 +1469,12 @@ body
 				h1
 					&::before
 						height: 100px
+	body.bluesale
+		.offers 
+			.cont-blue-sale
+				h1
+					&:before
+						width: 80px;
+						height: 60px;
+						top: calc(50% - 35px);
+						left: 30px;
